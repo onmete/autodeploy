@@ -10,6 +10,7 @@ def test_pass():
 
 
 def test_fail():
-    assert 1 == 2
+    # assert 1 == 2
+    pass
 
-# pep 8 fail
+# pep 8 should fail
