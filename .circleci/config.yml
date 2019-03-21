@@ -49,14 +49,9 @@ jobs:
           name: Running tests coverage
           command: |
             . venv/bin/activate
-            coverage run -m pytest
-            coverage report
             coverage xml
             export CODACY_PROJECT_TOKEN=$CODACY_TOKEN
             python-codacy-coverage -r coverage.xml
-
-      - store_artifacts:
-          path: coverage.xml
 
 workflows:
   version: 2
