@@ -1,4 +1,7 @@
 # Autodevops - example
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1506cf52558d4eef8b7819656864ea8d)](https://app.codacy.com/app/ondrejmetelka5/autodevops?utm_source=github.com&utm_medium=referral&utm_content=methlock/autodevops&utm_campaign=Badge_Grade_Dashboard)
+
 <table>
     <tr>
         <th>
