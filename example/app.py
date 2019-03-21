@@ -1,3 +1,19 @@
-version = '0.0.1'
+import socket
+from flask import Flask
 
-print(f'Hello {version}!')
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return "Hello, World!"
+
+
+if __name__ == "__main__":
+
+    # resolving machine IP address for correct web publishing
+    hostname = socket.gethostname()
+    ip_here = socket.gethostbyname(hostname)
+
+    app.run(debug=True, host=ip_here)
