@@ -40,12 +40,6 @@ jobs:
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - run:
-          name: Running PEP8 Check
-          command: |
-            . venv/bin/activate
-            py.test -m pep8 --pep8 example
-
-      - run:
           name: Running tests
           command: |
             . venv/bin/activate
