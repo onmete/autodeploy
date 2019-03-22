@@ -13,7 +13,7 @@ def home():
 if __name__ == "__main__":
 
     # resolving machine IP address for correct web publishing
-    hostname = socket.gethostname()
-    ip_here = socket.gethostbyname(hostname)
+    # hostname = socket.gethostname()
+    # ip_here = socket.gethostbyname(hostname)
 
-    app.run(debug=True, host=ip_here)
+    app.run(debug=True, host='0.0.0.0')

@@ -1,13 +1,8 @@
 # Python CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-python/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
       - image: circleci/python:3.6.1
 
       # Specify service dependencies here if necessary
@@ -32,7 +27,7 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install --upgrade pip
-            pip install -r requirements.txt
+            pip install -r requirements_tests.txt
 
       - save_cache:
           paths:
@@ -46,13 +41,24 @@ jobs:
             python -m pytest tests/
 
       - run:
-          name: Running tests coverage
+          name: Running tests coverage and uploading results
           command: |
             . venv/bin/activate
             coverage run -m pytest
             coverage xml
             export CODACY_PROJECT_TOKEN=$CODACY_TOKEN
             python-codacy-coverage -r coverage.xml
+
+      - setup_remote_docker:
+          docker_layer_caching: true
+
+      - run:
+          name: Build and push Docker image
+          command: |
+            . venv/bin/activate
+            docker build -t autodevops .
+            echo $DOCKERHUB_PW | docker login -u $DOCKERHUB_USER --password-stdin
+            docker push autodevops
 
 workflows:
   version: 2
