@@ -12,6 +12,16 @@
     </tr>
 </table>
 
-Some CI/CD principle demo.
+**work in progress**
 
-wip
+*CI/CD principle demo consists of simple Python Flask web app in docker container.
+After successful CircleCI tests docker image is pushed to DockerHub and then deployed to
+VPS.*
+
+##Requires:
+ - CircleCI and DockerHub accounts 
+ - Set CircleCI project Environment Variables 
+     - CODACY_TOKEN - Codacy project token for coverage badge
+     - DOCKERHUB_USER - DockerHub login
+     - DOCKERHUB_PW - DockerHub password
+ - Set CircleCI SSH Permissions to VPS/server
