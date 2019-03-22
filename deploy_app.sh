@@ -10,7 +10,7 @@ docker rmi $(docker images)
 
 printf "\n Login to DockerHub \n"
 sleep 1
-docker login --username $1 --password $2
+yes | docker login --username $1 --password $2
 
 printf "\n Pulling and running new app container \n"
 # --rm tag removes intermediate containers
