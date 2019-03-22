@@ -44,7 +44,6 @@ jobs:
             export CODACY_PROJECT_TOKEN=$CODACY_TOKEN
             python-codacy-coverage -r coverage.xml
 
-      # tells CircleCI to allocate a new Docker Engine, separate from the environment that is running our job
       - setup_remote_docker:
           docker_layer_caching: true
 
@@ -60,8 +59,7 @@ jobs:
       - run:
           name: Deploy app to VPS
           command: |
-            #ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST "/bin/bash deploy_app.sh"
-            ssh $VPS_USER@$VPS_HOST 'bash -s' < deploy_app.sh $DOCKERHUB_USER $DOCKERHUB_PW
+            ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST 'bash -s' < deploy_app.sh $DOCKERHUB_USER $DOCKERHUB_PW
 
 workflows:
       version: 2
