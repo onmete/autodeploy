@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 printf "\n Deploy script started \n"
-
 printf "\n Stopping and removing app container \n"
 docker stop web
 docker rm web
