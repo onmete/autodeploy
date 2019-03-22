@@ -59,7 +59,7 @@ jobs:
       - run:
           name: Deploy app to VPS
           command: |
-            ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST 'bash -s' < deploy_app.sh $DOCKERHUB_EMAIL $DOCKERHUB_PW
+            ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST 'bash -s' < deploy_app.sh $DOCKERHUB_USER $DOCKERHUB_PW
 
 workflows:
       version: 2
