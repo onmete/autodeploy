@@ -57,6 +57,6 @@ jobs:
           command: |
             . venv/bin/activate
             docker build -t autodevops .
-            echo $DOCKERHUB_PW | docker login -u $DOCKERHUB_USER --password-stdin
+            docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PW
             docker tag autodevops $DOCKERHUB_USER/autodevops
             docker push $DOCKERHUB_USER/autodevops
