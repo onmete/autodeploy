@@ -7,7 +7,7 @@ docker rm web
 
 printf "\n Removing all images \n"
 docker rmi $(docker images)
-docker image prune --force
+# here I should remove only autodevops image, not supportive ones
 
 printf "\n Login to DockerHub \n"
 sleep 1

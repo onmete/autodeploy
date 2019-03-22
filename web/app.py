@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello world from auto deploy!"
+    return "Tralala"
 
 
 if __name__ == "__main__":
