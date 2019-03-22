@@ -14,7 +14,7 @@ yes | docker login --username $1 --password $2
 
 printf "\n Pulling and running new app container \n"
 # --rm tag removes intermediate containers
-docker run -d -p 5000:5000 --rm=true --name web $1/autodevops:latest  &&  printf "\n Done \n"
+docker run -d -p 5000:5000 --name web $1/autodevops:latest  &&  printf "\n Done \n"
 
 
 # # # Manual docker clearing
