@@ -9,9 +9,8 @@ docker rm web
 printf "\n Removing all images \n"
 docker rmi $(docker images)
 
-printf "\n Loging to DockerHub \n"
-echo $1
-echo $2
+printf "\n Login to DockerHub \n"
+sleep 3
 docker login -u $1 -p $2
 
 printf "\n Pulling and running new app container \n"
