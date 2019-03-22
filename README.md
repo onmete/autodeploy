@@ -24,4 +24,6 @@ VPS.*
      - CODACY_TOKEN - Codacy project token for coverage badge
      - DOCKERHUB_USER - DockerHub login
      - DOCKERHUB_PW - DockerHub password
+     - SSH_USER - Login to VPS
+     - SSH_HOST - IP of VPS
  - Set CircleCI SSH Permissions to VPS/server

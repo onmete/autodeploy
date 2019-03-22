@@ -1,20 +1,22 @@
 #!/usr/bin/env bash
 
-echo "  Deploy script started"
+printf "\n Deploy script started \n"
 
-echo "  Stopping and removing app container"
+printf "\n Stopping and removing app container \n"
 docker stop web
 docker rm web
 
-echo "  Removing all images"
+printf "\n Removing all images \n"
 docker rmi $(docker images)
 
-echo "  Loging to DockerHub"
+printf "\n Loging to DockerHub \n"
+echo $1
+echo $2
 docker login -u $1 -p $2
 
-echo "  Pulling and running new app container"
+printf "\n Pulling and running new app container \n"
 # --rm tag removes intermediate containers
-docker run -d -p 5000:5000 --rm=true --name web methlock/autodevops:latest  &&  echo "  Done"
+docker run -d -p 5000:5000 --rm=true --name web $1/autodevops:latest  &&  printf "\n Done \n"
 
 
 # # # Manual docker clearing
