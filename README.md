@@ -1,4 +1,4 @@
-# Autodevops - example
+# Autodeploy - example
 <table>
     <tr>
         <th>
@@ -15,10 +15,11 @@
 **work in progress**
 
 *CI/CD principle demo consists of simple Python Flask web app in docker container.
-After successful CircleCI tests docker image is pushed to DockerHub and then deployed to
+After successful CircleCI tests, builded docker image is pushed to DockerHub and then deployed to
 VPS.*
 
 ##Requires:
+ - Own VPS
  - CircleCI and DockerHub accounts 
  - Set CircleCI project Environment Variables 
      - CODACY_TOKEN - Codacy project token for coverage badge
